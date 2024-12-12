@@ -5,7 +5,7 @@ from apis.v1 import route_subscription_status
 from apis.v1 import route_project
 from apis.v1 import route_team
 from apis.v1 import route_team_member
-
+from apis.v1 import route_task
 
 api_router = APIRouter()
 api_router.include_router(route_user.router,prefix="/users",tags=["users"])
@@ -14,3 +14,4 @@ api_router.include_router(route_subscription_status.router,prefix="/subscription
 api_router.include_router(route_project.router,prefix="/projects",tags=["projects"])
 api_router.include_router(route_team.router,prefix="/teams",tags=["teams"])
 api_router.include_router(route_team_member.router,prefix="/team_members",tags=["team_members"])
+api_router.include_router(route_task.router,prefix="/tasks",tags=["tasks"])

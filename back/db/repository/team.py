@@ -33,3 +33,9 @@ def create_new_team(project_id: UUID, team: TeamCreate, db: Session):
         raise HTTPException(status_code=403, detail="User without permission")
     
     return new_team
+
+def get_all_teams(db:Session):
+    return db.query(Team).all()
+
+def get_user(team_id: UUID, db: Session):
+    return db.query(Team).filter(Team.id == team_id).first()
