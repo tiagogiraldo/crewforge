@@ -15,5 +15,5 @@ class Task_Assignment(Base):
     user_id =  Column(Uuid(as_uuid=True),ForeignKey("user.id"))
     user = relationship("User",backref="task_assignments")  
     task_id =  Column(Uuid(as_uuid=True),ForeignKey("task.id"))
-    task = relationship("Task",backref="task_assignments")
+    task = relationship("Task",backref="tasks")
 
